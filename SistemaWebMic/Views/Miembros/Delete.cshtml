@@ -1,0 +1,114 @@
+@model SistemaWebMic.Models.Entidades.Persona
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Nacimiento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Nacimiento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comuna)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comuna)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TCelular)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TCelular)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TCasa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TCasa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Facebook)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Facebook)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_Civil)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado_Civil)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Pareja)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Pareja)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hijos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hijos)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad_Hijos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad_Hijos)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+</body>
+</html>

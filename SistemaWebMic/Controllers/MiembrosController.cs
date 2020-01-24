@@ -65,7 +65,9 @@ namespace SistemaWebMic.Controllers
         {
             if (ModelState.IsValid)
             {
-                var registro = _mapper.Map<Persona>(registerViewModels);
+                Persona registro = _mapper.Map<Persona>(registerViewModels);
+             
+               
                 await _context.Add(registro);
                 return RedirectToAction(nameof(Index));
             }

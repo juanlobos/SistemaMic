@@ -42,14 +42,28 @@ namespace SistemaWebMic.ViewModels
         public string Invitacion_Iglesia { get; set; }
         [Display(Name = "Desde cuando congrega")]
         public string Cuando_Congrega { get; set; }
+        [Display(Name = "1 Visita Iglesia")]
         public bool VisitaPrimera { get; set; }
+        [Display(Name = "¿Acepto a Jesús?")]
         public bool Acepto_Jesus { get; set; }
+        [Display(Name = "Año de salvación")]
         public int? Anio { get; set; }
+        [Display(Name = "¿Es bautizado?")]
         public bool Bautizado { get; set; }
+        [Display(Name = "Lugar de bautismo")]
         public string LugarBautismo { get; set; }
+        [Display(Name = "Fecha bautismo")]
         public DateTime? FechaBautismo { get; set; }
+        [Display(Name = "Razones estadía Mic")]
         public string Razones_Mic { get; set; }
+        [Display(Name = "¿Desea consejería?")]
         public bool RecibirConsejeria { get; set; }
-        public int PersonaId { get; set; }
+        public int IdSociedad { get; set; }
+        [Display(Name = "Nivel Educación")]
+        public string NivelEducacion { get; set; }
+        [Display(Name = "Profesión")]
+        public string Profesion { get; set; }
+        [Display(Name = "Lugar trabajo")]
+        public string LugarTrabajo { get; set; }
     }
 }

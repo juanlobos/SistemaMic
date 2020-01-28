@@ -1,11 +1,10 @@
 using System;
-using System.Collections.Generic;
+using SistemaWebMic.Models.Entidades;
 
-namespace SistemaWebMic.Models.Entidades
+namespace SistemaWebMic.ViewModels
 {
-    public class Persona
+    public class PersonaViewModels
     {
-
         public int Id { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
@@ -22,7 +21,6 @@ namespace SistemaWebMic.Models.Entidades
         public bool? Hijos { get; set; }
         public int? Cantidad_Hijos { get; set; }
         public Datos_Espirituales Espiritual { get; set; }
-        public Datos_Sociedad Sociedad{ get; set; }
-
+        public Datos_Sociedad Sociedad { get; set; }
     }
 }

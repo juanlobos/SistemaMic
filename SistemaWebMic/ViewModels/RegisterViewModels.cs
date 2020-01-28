@@ -58,7 +58,6 @@ namespace SistemaWebMic.ViewModels
         public string Razones_Mic { get; set; }
         [Display(Name = "¿Desea consejería?")]
         public bool RecibirConsejeria { get; set; }
-        public int IdSociedad { get; set; }
         [Display(Name = "Nivel Educación")]
         public string NivelEducacion { get; set; }
         [Display(Name = "Profesión")]

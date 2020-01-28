@@ -28,7 +28,7 @@ namespace SistemaWebMic.Controllers
         public async Task<IActionResult> Index()
         {
             var personas = await _context.GetAll<Persona>();
-            var personasReturn = _mapper.Map<IEnumerable<MiembrosViewModels>>(personas);
+            var personasReturn = _mapper.Map<IEnumerable<PersonaViewModels>>(personas);
             return View(personasReturn);
         }
 
@@ -41,7 +41,7 @@ namespace SistemaWebMic.Controllers
             }
 
             var persona = await _context.GetById<Persona>(id);
-            var personaViewModels = _mapper.Map<MiembrosViewModels>(persona);
+            var personaViewModels = _mapper.Map<PersonaViewModels>(persona);
             if (persona == null)
             {
                 return NotFound();
@@ -61,17 +61,47 @@ namespace SistemaWebMic.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(RegisterViewModels registerViewModels)
+        public async Task<IActionResult> Create(PersonaViewModels registerViewModels)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Persona registro = _mapper.Map<Persona>(registerViewModels);
-             
-               
-                await _context.Add(registro);
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    Persona registro = new Persona();
+                    registro = _mapper.Map<Persona>(registerViewModels);
+                    var espiritual = new Datos_Espirituales();
+                    var sociedad = new Datos_Sociedad();
+
+                    espiritual.Cuando_Congrega = registerViewModels.Espiritual.Cuando_Congrega;
+                    espiritual.FechaBautismo = registerViewModels.Espiritual.FechaBautismo;
+                    espiritual.Acepto_Jesus = registerViewModels.Espiritual.Acepto_Jesus;
+                    espiritual.Anio = registerViewModels.Espiritual.Anio;
+                    espiritual.Bautizado = registerViewModels.Espiritual.Bautizado;
+                    espiritual.Invitacion_Iglesia = registerViewModels.Espiritual.Invitacion_Iglesia;
+                    espiritual.Llegada_Iglesia = registerViewModels.Espiritual.Llegada_Iglesia;
+                    espiritual.LugarBautismo = registerViewModels.Espiritual.LugarBautismo;
+                    espiritual.Razones_Mic = registerViewModels.Espiritual.Razones_Mic;
+                    espiritual.RecibirConsejeria = registerViewModels.Espiritual.RecibirConsejeria;
+                    espiritual.VisitaPrimera = registerViewModels.Espiritual.VisitaPrimera;
+
+                    registro.Espiritual = espiritual;
+
+                    sociedad.LugarTrabajo = registerViewModels.Sociedad.LugarTrabajo;
+                    sociedad.NivelEducacion = registerViewModels.Sociedad.NivelEducacion;
+                    sociedad.Profesion = registerViewModels.Sociedad.Profesion;
+                    registro.Sociedad = sociedad;
+
+                    await _context.Add(registro);
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(registerViewModels); 
             }
-            return View(registerViewModels);
+            catch (System.Exception ex)
+            {
+                var mensaje = ex.Message;
+                return NotFound();
+            }
+            
         }
 
         // GET: Miembros/Edit/5

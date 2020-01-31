@@ -7,11 +7,15 @@ namespace SistemaWebMic.ViewModels
     public class PersonaViewModels
     {
         public int Id { get; set; }
+        [Required]
         public string Nombres { get; set; }
+        [Required]
         public string Apellidos { get; set; }
+        [Required]
         [Display(Name = "Fecha Nacimiento")]
         [DataType(DataType.Date)]
         public DateTime Fecha_Nacimiento { get; set; }
+        [Required]
         public string Nacionalidad { get; set; }
         [Display(Name = "Dirección")]
         public string Direccion { get; set; }

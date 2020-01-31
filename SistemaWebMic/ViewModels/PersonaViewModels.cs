@@ -33,7 +33,7 @@ namespace SistemaWebMic.ViewModels
         public bool? Hijos { get; set; }
         [Display(Name = "Cantidad Hijos")]
         public int? Cantidad_Hijos { get; set; }
-        public Datos_Espirituales Espiritual { get; set; }
-        public Datos_Sociedad Sociedad { get; set; }
+        public Datos_EspiritualesViewModels Espiritual { get; set; }
+        public Datos_SociedadViewModels Sociedad { get; set; }
     }
 }

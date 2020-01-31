@@ -112,7 +112,11 @@ namespace SistemaWebMic.Controllers
                 return NotFound();
             }
             var persona = await _context.GetById<Persona>(id);
-            var personaViewModels = _mapper.Map<MiembrosViewModels>(persona);
+            var espiritual =await _context.First<Datos_Espirituales>(z=>z.PersonaId==persona.Id);
+            var sociedad = await _context.First<Datos_Sociedad>(z => z.PersonaId == persona.Id);
+            var personaViewModels = _mapper.Map<PersonaViewModels>(persona);
+            personaViewModels.Sociedad = _mapper.Map<Datos_SociedadViewModels>(sociedad);
+            personaViewModels.Espiritual=_mapper.Map<Datos_EspiritualesViewModels>(espiritual);
             if (persona == null)
             {
                 return NotFound();

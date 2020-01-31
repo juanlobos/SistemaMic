@@ -20,6 +20,10 @@ namespace SistemaWebMic.AutoMapper
             CreateMap<RegisterViewModels, Persona>();
             CreateMap<PersonaViewModels, Persona>();
             CreateMap<Persona, PersonaViewModels>();
+            CreateMap<Datos_Espirituales, Datos_EspiritualesViewModels>();
+            CreateMap<Datos_EspiritualesViewModels, Datos_Espirituales>();
+            CreateMap<Datos_SociedadViewModels, Datos_Sociedad>();
+            CreateMap<Datos_Sociedad, Datos_SociedadViewModels>();
 
         }
     }

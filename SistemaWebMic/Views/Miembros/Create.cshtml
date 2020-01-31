@@ -234,7 +234,14 @@
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <input type="submit" value="Registrar" class="btn btn-primary" style="margin-top: 30px;" />
+                <label asp-for="Sociedad.NivelEducacion" class="control-label"></label>
+                <input asp-for="Sociedad.NivelEducacion" class="form-control" />
+                <span asp-validation-for="Sociedad.NivelEducacion" class="text-danger"></span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="submit" value="Registrar" class="btn btn-primary"/>
               </div>
             </div>
           </div>
